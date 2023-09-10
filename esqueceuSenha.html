@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Esqueceu Senha</title>
+        <style>
+            h2{
+                text-align: center;
+            }
+
+            form{
+                text-align: center;
+            }
+        </style>
+        </style>
+    </head>
+    <body>
+        <h2>Redefinir a Senha</h2>
+        <form action="resetPassword.php" method="POST">
+            <label for="usuario">Nome de Usuário:</label>
+            <input type="text" id="usuario" name="usuario" required/>
+            <br><br>
+            <button type="submit">Enviar</button>
+        </form>
+        <script>
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 100) {
+                        $('a[href="#top"]').fadeIn();
+                    } else {
+                        $('a[href="#top"]').fadeOut();
+                    }
+                });
+                $('a[href="#top"]').click(function(){
+                    $('html, body').animate({scrollTop : 0},800);
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>

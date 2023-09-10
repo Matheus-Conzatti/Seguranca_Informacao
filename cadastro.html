@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>cadastro</title>
+        <style>
+            h3{
+                text-align: center;
+            }
+
+            form{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Cadastro</h3>
+        <form action="cadastro.php" method="POST">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Digite o seu nome:" required>
+            <br><br>
+            
+            <label for="login">Usuário:</label><br>
+            <input type="text" id="login" name="usuario" placeholder="Digite o seu nickname:" required>
+            <br><br>
+
+            <label for="senha">Senha:</label><br>
+            <input type="text" id="senha" name="senha" placeholder="Digite sua senha: " required>
+            <br><br>
+            
+            <button type="submit">Cadastrar</button>
+            <button type="reser">Limpar dados</button><br><br>
+            <input type="button" value="Voltar" onclick="history.go(-1)"/>
+        </form>
+        <script>
+           $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 100) {
+                        $('a[href="#top"]').fadeIn();
+                    } else {
+                        $('a[href="#top"]').fadeOut();
+                    }
+                });
+
+                $('a[href="#top"]').click(function(){
+                    $('html, body').animate({scrollTop : 0},800);
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>
+

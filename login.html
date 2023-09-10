@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <style>
+            h3{
+                text-align: center;
+            }
+
+            form{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Login</h3>
+        <form action="login.php" method="POST">
+            <label>Login:</label><br>
+            <input type="text" id="usuario" name="usuario" placeholder="Digite a sua senha:"/>
+            <br><br>
+
+            <label>Senha:</label><br>
+            <input type="text" id="senha" name="senha" placeholder="Digite a sua senha:"/>
+            <br><br>
+            
+            <button type="submit" id="buttonEnviar">Logar</button>
+            <button type="reset">Limpar Campos</button><br>
+            <a href="cadastro.html">Cadastre-se</a>
+            <a href="esqueceuSenha.html">Esqueceu a Senha</a>
+        </form>
+    </body>
+</html>
