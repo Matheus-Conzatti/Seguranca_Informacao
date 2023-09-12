@@ -9,7 +9,7 @@
     $senhaNormalizada = preg_replace('/\s+/', ' ', $senha);
 
     // Cria a hash sha1 da senha normalizada
-    $senhaHash = sha1($senhaNormalizada);
+    $senhaHash = sha256($senhaNormalizada);
 
     $sql = "INSERT INTO login (nome, usuario, senha) VALUES ('$nome', '$usuario', '$senhaHash')";
 
