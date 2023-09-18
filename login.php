@@ -13,8 +13,8 @@
     // Normaliza a senha (remove espaços em branco extras e repetições de caracteres)
     $senhaNormalizada = preg_replace('/\s+/', ' ', $senha);
 
-    // Cria a hash sha1 da senha normalizada
-    $senhaHash = sha1($senhaNormalizada);
+    // Cria a hash sha256 da senha normalizada
+    $senhaHash = hash('sha256',$senhaNormalizada);
 
     $stmt = $conn->prepare("SELECT * FROM login WHERE usuario = ?");
     $stmt->bind_param("s", $usuario);

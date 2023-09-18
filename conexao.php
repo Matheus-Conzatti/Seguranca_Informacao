@@ -1,5 +1,5 @@
 <?php
-    $servidor = "127.0.0.1:3306";
+    $servidor = "127.0.0.1:3310";
     $usuario = "root";
     $senha = "";
     $dbname = "segurancainfo";
