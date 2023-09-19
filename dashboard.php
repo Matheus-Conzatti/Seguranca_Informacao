@@ -15,6 +15,8 @@
     <body>
         <h2> Bem-vindo, <?php echo $_SESSION['usuario']; ?></h2>
         <p>Conteúdo do dashboard aqui.</p>
+        <a href="dicionario.html">Atividade 2</a>
+        <br><br>
         <a href="logout.php">Sair</a>
     </body>
 </html>

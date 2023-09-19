@@ -12,6 +12,23 @@
       <input type="text" id="hashAlvo" name="hashAlvo" required>
       <br><br>
       <input type="submit" value="Verificar Senha">
+      <input type="button" value="Voltar" onclick="history.go(-1)"/>
     </form>
+    <script>
+      $(document).ready(function(){
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 100) {
+            $('a[href="#top"]').fadeIn();
+          } else {
+            $('a[href="#top"]').fadeOut();
+          }
+        });
+
+        $('a[href="#top"]').click(function(){
+          $('html, body').animate({scrollTop : 0},800);
+          return false;
+        });
+      });
+   </script>
   </body>
 </html>
