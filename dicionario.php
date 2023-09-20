@@ -50,21 +50,21 @@
             if($stmtSalvarSenha->execute()) {
                 echo "Senha encontrada no banco de dados e salva na tabela 'senhas_encontradas'.<br>";
                 echo "<input type='button' value='Voltar' onclick='history.go(-1)'/>";
-                echo "<script>
-                $(document).ready(function(){
-                     $(window).scroll(function(){
-                         if ($(this).scrollTop() > 100) {
-                             $('a[href=''top']').fadeIn();
-                         } else {
-                             $('a[href='#top']').fadeOut();
-                         }
-                     });
-     
-                     $('a[href='#top']').click(function(){
-                         $('html, body').animate({scrollTop : 0},800);
-                         return false;
-                     });
-                 });
+                echo "<script language='javascript'>
+                    $(document).ready(function(){
+                        $(window).scroll(function(){
+                            if ($(this).scrollTop() > 100) {
+                                $('a[href=''top']').fadeIn();
+                            } else {
+                                $('a[href='#top']').fadeOut();
+                            }
+                        });
+        
+                        $('a[href='#top']').click(function(){
+                            $('html, body').animate({scrollTop : 0},800);
+                            return false;
+                        });
+                    });
              </script>";
             }else{
                 echo "Erro ao salvar a senha no banco de dados: ".$stmtSalvarSenha->error;
