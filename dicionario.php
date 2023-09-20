@@ -48,7 +48,10 @@
             $stmtSalvarSenha->bind_param("s", $senhaEncontrada);
 
             if($stmtSalvarSenha->execute()) {
-                echo "Senha encontrada no banco de dados e salva na tabela 'senhas_encontradas'.<br>";
+                echo "<script langage='javascript'>
+                    alert(Senha encontrada no banco de dados e salva na tabela 'senhas_encontradas'.<br>)
+                    location.href='dicionario.html'
+                </script>";
             }else{
                 echo "Erro ao salvar a senha no banco de dados: ".$stmtSalvarSenha->error;
             }
@@ -58,7 +61,7 @@
         }else{
             echo "<script language='javascript'>
                 alert('Senha não encontrada no banco de dados!');
-                location.href='dicionario.html';
+                location.href='dicionario.html'
             </script>";
         }
 
