@@ -24,7 +24,7 @@
             // }
 
             foreach ($lines as $line) {
-                $hashRainbow = hash('sha256',trim($line));
+                $hashRainbow = hash('sha256', trim($line));
                 
                 if (trim($hashRainbow) === trim($hash)) {
                     fwrite($fileKeys, $line);
