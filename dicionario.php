@@ -1,4 +1,5 @@
 <?php
+    require 'RainbowTableMaker.php';
     // Verifica se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Obtém o hash alvo do formulário
@@ -21,6 +22,25 @@
         //Consulta para obter a senha criptografada
         $sql = "SELECT senha FROM login WHERE senha = ?";
         
+        //---------------------------------------------------
+        $Rain = new RainbowTable();
+        $query = "SELECT senha FROM login";
+        $result = $conn->query($query);
+        // Verifica se a consulta foi bem-sucedida
+        if ($result->num_rows > 0) {
+            // Inicializa uma lista vazia para armazenar os valores da coluna
+
+            // Percorre os resultados e adiciona os valores à lista
+            while ($line = $result->fetch_assoc()) {
+                $Rain->HashReverse($line['senha']);
+            }
+        } 
+        else {
+            echo "Nenhum resultado encontrado.";
+        }
+        //-------------------------------------------------------
+
+    
         //Verifica se a preparação da consulta foi bem-sucedida
         $stmt = $conn->prepare($sql);
         if(!$stmt){
@@ -32,6 +52,8 @@
         $stmt->store_result();
 
         if($stmt->num_rows > 0){
+
+
             //Senha encontrada no banco de dados
             $stmt->bind_result($senhaEncontrada);
             $stmt->fetch();
@@ -46,6 +68,9 @@
             }
 
             $stmtSalvarSenha->bind_param("s", $senhaEncontrada);
+            
+
+
 
             if($stmtSalvarSenha->execute()) {
                 echo "Senha encontrada no banco de dados e salva na tabela 'senhas_encontradas'.<br>";

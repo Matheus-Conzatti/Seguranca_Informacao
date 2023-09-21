@@ -33,24 +33,11 @@
                     location.href='login.html';
                 </script>";
         }else{
-            echo "<script language='javascript'>
-                    alert('ERRO: Credenciais inválidas!');
-                    location.href='login.html';
-                </script>";
+            CheckAttempts();
         }
     }else{
+        CheckAttempts();
         
-        if($attempts >= 3){
-            echo "<script language='javascript'>
-                alert('ERRO: Número de tentativas excedido!');
-                location.href='login.html';
-                </script>";
-        }else{
-            echo "<script language='javascript'>
-                alert('ERRO: Credenciais inválidas!');
-                location.href='login.html';
-                </script>";
-        }
     }
 
     $stmt->close();
